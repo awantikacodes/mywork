@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiLab - Sample Experiment</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.8em;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .lab-equipment {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .lab-equipment img {
+            width: 120px;
+            height: 180px;
+            cursor: grab;
+            border: 2px solid transparent;
+            transition: transform 0.3s ease, border 0.3s ease;
+        }
+
+        .lab-equipment img:hover {
+            transform: scale(1.1);
+            border: 2px solid #ff9800;
+        }
+
+        #bunsen-burner {
+            background-color: #f0e4d7;
+            border: 2px dashed #4CAF50;
+            width: 250px;
+            height: 300px;
+            display: inline-block;
+            vertical-align: top;
+            padding: 10px;
+            position: relative;
+        }
+
+        #bunsen-burner p {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+        }
+
+        .popup {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .popup p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .popup button {
+            background-color: #ff9800;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #warning {
+            color: #e74c3c;
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DigiLab - Chemistry Experiment</h1>
+</header>
+
+<div class="content">
+    <h2>Acid-Base Reaction Experiment</h2>
+    <p><strong>Aim:</strong> To observe the reaction between an acid and a base.</p>
+    <p><strong>Materials Required:</strong> Bunsen Burner, Test Tube, Acid, Base.</p>
+    
+    <button onclick="showPopup()">Start Experiment</button>
+
+    <div class="popup" id="popup">
+        <h3>Procedure</h3>
+        <p>1. Place the test tube on the bunsen burner stand.<br> 2. Add a few drops of acid to the test tube.<br> 3. Add a few drops of base and observe the reaction.</p>
+        <button onclick="closePopup()">Continue</button>
+    </div>
+
+    <div class="lab-equipment">
+        <div id="bunsen-burner" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>Drop test tube here</p>
+        </div>
+
+        <div>
+            <img src="test-tube.png" alt="Test Tube" id="test-tube" draggable="true" ondragstart="drag(event)">
+            <img src="acid.png" alt="Acid" id="acid" draggable="true" ondragstart="drag(event)">
+            <img src="base.png" alt="Base" id="base" draggable="true" ondragstart="drag(event)">
+        </div>
+    </div>
+
+    <p id="warning">Warning: Handle acid with care! Avoid skin contact.</p>
+</div>
+
+<script>
+    function showPopup() {
+        document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        const itemId = event.dataTransfer.getData("text");
+
+        // Add warning for Acid
+        if (itemId === 'acid') {
+            document.getElementById('warning').style.display = 'block';
+        }
+
+        event.target.innerHTML = '';
+        const item = document.getElementById(itemId);
+        event.target.appendChild(item);
+    }
+</script>
+
+</body>
+</html>
