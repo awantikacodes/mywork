@@ -38,6 +38,15 @@
             text-align: center;
             color: white;
         }
+ .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+        }
+
 
         header h1 {
             font-size: 6em; /* Increased font size for banner text */
@@ -117,6 +126,20 @@
             text-decoration: none;
             cursor: pointer;
         }
+        /* Achievements Section */
+        .achievement-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .achievement-card img {
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
         /* Footer */
         footer {
@@ -131,7 +154,8 @@
 
     <!-- Single Dark Blue Banner -->
     <header>
-        <h2 style="color:white">My Projects & Papers</h2>
+ <img src="awan.jpg" alt="Your Profile Picture" class="profile-pic">
+<h2 style="color:white">My Projects & Papers</h2>
         <h2 style="color:white">Welcome to my Portfolio!
 Explore my work in technology and research</h2>
     </header>
@@ -223,6 +247,22 @@ Explore my work in technology and research</h2>
             </div>
         </div>
     </section>
+ <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <h3 align="center">Notable Accomplishments in My Journey</h3>
+            <div class="achievement-card">
+                <h3>INEX International 2024</h3>
+                <p>Placed <strong>second</strong> in the prestigious INEX International 2024 competition.INEX International 2024 is a global innovation expo held at Don Bosco College of Engineering, South Goa. It featured over 150 innovators from 15+ countries, showcasing groundbreaking projects and fostering collaboration between inventors, investors, and academic leaders. The event introduced the Higher Education Institutions (HEI) Award to honor institutions excelling in innovation and entrepreneurship</p>
+                <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+                    <img src="image1.jpg" alt="INEX Award Image 1" style="width:45%; height:auto;">
+                    <img src="image2.jpg" alt="INEX Award Image 2" style="width:45%; height:auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Project Modals -->
     <div id="project1" class="modal">
@@ -232,8 +272,83 @@ Explore my work in technology and research</h2>
             <p>StudentCentral is an application that assists students of all ages by providing advice and instructions on various aspects of education and personal development. The app offers solutions to academic, emotional, and social challenges that students face today.</p>
         </div>
     </div>
-    <!-- Add additional modals for other projects similarly -->
 
+<div id="project2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project2')">&times;</span>
+            <h2>DigiLab</h2>
+            <p>An innovative online chemistry lab providing a step-by-step virtual experimentation environment for CBSE and State board students in grades 8-10. DigiLab mimics real-world lab experiments with interactive features, making chemistry engaging and accessible from home.</p>
+        </div>
+    </div>
+
+<div id="project3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project3')">&times;</span>
+            <h2>Radius-Oriented Garbage Collector for Lakes</h2>
+            <p>A motorized solution designed to clean lakes by collecting floating trash within a specific radius. This environmentally conscious project addresses water pollution, promoting cleaner ecosystems and healthier aquatic life.
+
+</p>
+        </div>
+    </div>
+
+<div id="project4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project4')">&times;</span>
+            <h2>Weight-Sensitive Barrier</h2>
+            <p>A wildlife sanctuary safety system that employs weight-sensitive technology to prevent animals from falling off cliffs. It ensures the safety of endangered species and enhances sanctuary management efficiency.</p>
+        </div>
+    </div>
+
+<div id="project5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project5')">&times;</span>
+            <h2>Radio Frequency Reducer</h2>
+            <p>A cutting-edge conservation project that minimizes harmful mobile device frequencies in wildlife sanctuaries. By reducing radiation exposure, it helps protect birds and maintain ecological balance.</p>
+        </div>
+    </div>
+
+<div id="project6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project6')">&times;</span>
+            <h2>Pratishta</h2>
+            <p>An intelligent chatbot built for colleges to address student and visitor inquiries. Pratishta integrates a library system, campus navigation, and real-time responses to streamline information dissemination.</p>
+        </div>
+    </div>
+
+<div id="project7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project7')">&times;</span>
+            <h2>Cypher:Hardware-Enabled Root of Trust</h2>
+            <p>A security-focused project for the UIDAI portal, ensuring the protection of Aadhaar photographs through a hardware-enabled root of trust. This system fortifies personal data privacy and aligns with the standards of the Smart India Hackathon 2024.</p>
+        </div>
+    </div>
+
+<div id="project8" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project8')">&times;</span>
+            <h2>QuantaOne</h2>
+            <p>A state-of-the-art medical rover that captures and records patient vitals, providing healthcare professionals with precise, real-time data. QuantaOne enhances diagnostic accuracy and simplifies patient monitoring.</p>
+        </div>
+    </div>
+
+<div id="project9" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project9')">&times;</span>
+            <h2>Gulbarga Tourism Website</h2>
+            <p>A dynamic website showcasing six iconic historical landmarks of Gulbarga, such as Gulbarga Fort and Buddha Vihar. The platform offers immersive insights into the city’s rich heritage, catering to both tourists and history enthusiasts.</p>
+        </div>
+    </div>
+
+<div id="project10" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project10')">&times;</span>
+            <h2>LegalDocX</h2>
+            <p>A secure online platform for storing and managing legal documents. LegalDocX enables users to grant controlled access to third parties, ensuring data confidentiality while streamlining document sharing processes.
+
+</p>
+        </div>
+    </div>
+  
     <!-- Paper Modals -->
     <div id="paper1" class="modal">
         <div class="modal-content">
@@ -242,11 +357,53 @@ Explore my work in technology and research</h2>
             <p>This paper discusses the essential role of cybersecurity in safeguarding personal data in the digital age, highlighting various threats and the importance of robust security measures.</p>
         </div>
     </div>
-    <!-- Add additional modals for other papers similarly -->
+
+    <div id="paper2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('paper2')">&times;</span>
+            <h2>The Role of Gamification in Education</h2>
+            <p>Investigates the integration of gamification in education and its impact on student engagement and learning outcomes. It provides insights into how game-based elements can revolutionize traditional teaching methods.</p>
+        </div>
+    </div>
+
+    <div id="paper3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('paper3')">&times;</span>
+            <h2>Gender Equality in STEM Fields</h2>
+            <p>Examines the challenges and opportunities in achieving gender equality within STEM fields. The paper discusses strategies to bridge the gender gap and foster an inclusive environment in science, technology, engineering, and mathematics.</p>
+        </div>
+    </div>
+
+    <div id="paper4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('paper4')">&times;</span>
+            <h2>Digital Detox: Managing Screen Time</h2>
+            <p>Focuses on the growing need for digital detox strategies to manage screen time effectively. It emphasizes the importance of balancing technology use with mental health and productivity.</p>
+        </div>
+    </div>
+
+    <div id="paper5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('paper5')">&times;</span>
+            <h2>Impact of Music Therapy on Mental Health</h2>
+            <p>Delves into the therapeutic potential of music in alleviating mental health issues. The paper discusses scientific studies and real-life applications of music therapy in managing stress, anxiety, and depression.</p>
+        </div>
+    </div>
+
+    <div id="paper6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('paper6')">&times;</span>
+            <h2>Space Travel: Pros and Cons</h2>
+            <p>Analyzes the advantages and challenges of space travel from technological, ethical, and environmental perspectives. It discusses the potential of space exploration and its implications for humanity’s future.</p>
+        </div>
+    </div>
+   
 
     <!-- Footer -->
     <footer>
-<p>Email:awantikainamdar2003@gmail.com</p>
+<h5 style="color:white"><span>&#x2709; awantikainamdar2003@gmail.com</span> </h5>
+<h5 style="color:white"><span>&#x260E;  +919902390368</h5>
+
         <p>&copy; 2024 Awantika P. Inamdar-My Projects & Papers | All Rights Reserved</p>
     </footer>
 
