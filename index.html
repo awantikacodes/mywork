@@ -1,330 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Projects & Papers</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-
-        /* Global Styles */
-        h2, h3 {
-            color: #00274d;
-        }
-
-        a {
-            text-decoration: none;
-            color: #008cba;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header / Banner */
-        header {
-            background-color: #00274d;
-            padding: 20px 0; /* Reduced padding for shorter banner */
-            text-align: center;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 6em; /* Increased font size for banner text */
-            margin: 0;
-        }
-
-        header p {
-            font-size: 3em; /* Increased font size for subtitle */
-            margin-top: 10px;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 40px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #00274d;
-        }
-
-        /* Project and Paper Cards */
-        .project-card, .paper-card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 10px;
-            transition: transform 0.2s ease-in-out;
-            text-align: center;
-            position: relative;
-            width: 300px;
-        }
-
-        .project-card:hover, .paper-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        /* Modal (Pop-up) Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 8px;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover, .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #00274d;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>My Projects & Papers</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    h2, h3 {
+      color: #00274d;
+    }
+    a {
+      text-decoration: none;
+      color: #008cba;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #00274d;
+      padding: 20px 0;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      font-size: 6em;
+      margin: 0;
+    }
+    header p {
+      font-size: 3em;
+      margin-top: 10px;
+    }
+    section {
+      padding: 40px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .project-card, .paper-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 10px;
+      transition: transform 0.2s ease-in-out;
+      text-align: center;
+      width: 300px;
+      cursor: pointer;
+    }
+    .project-card:hover, .paper-card:hover {
+      transform: translateY(-10px);
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 8px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover, .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #00274d;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Single Dark Blue Banner -->
-    <header>
-        <h2 style="color:white">My Projects & Papers</h2>
-        <h2 style="color:white">Welcome to my Portfolio!
-Explore my work in technology and research</h2>
-    </header>
+<header>
+  <h2>My Projects & Papers</h2>
+  <h2>Welcome to my Portfolio! Explore my work in technology and research</h2>
+</header>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <h3 align="Center">These are projects that i am passionately working on </h3>
-            <div class="card-container">
-                <div class="project-card" onclick="openModal('project1')">
-                    <h3>StudentCentral</h3>
-                    <p>An application to assist students with advice on various aspects of education and student life.</p>
-                    <img src="Capture2.png" alt="StudentCentral Image" style="width:50%; height:60%;">
-                </div>
-                <div class="project-card" onclick="openModal('project2')">
-                    <h3>DigiLab</h3>
-                    <p>A chemistry lab environment for students to learn contactless experiments.</p>
-                    <img src="Capture.png" alt="DigiLab Image" style="width:100%; height:auto;">
-                </div>
-                <div class="project-card" onclick="openModal('project3')">
-                    <h3>Radius-Oriented Garbage Collector for Lakes</h3>
-                    <p>A motorized setup that collects trash floating in lakes with a rotating arm.</p>
-                    <img src="7.jpeg" alt="Garbage Collector Image" style="width:100%; height:60%;">
-                </div>
-                <div class="project-card" onclick="openModal('project4')">
-                    <h3>Weight-Sensitive Barrier</h3>
-                    <p>A system to protect animals from falling off cliffs in wildlife sanctuaries.</p>
-                    <img src="9.jpeg" alt="Weight-Sensitive Barrier Image" style="width:100%; height:30%;">
-                </div>
-                <div class="project-card" onclick="openModal('project5')">
-                    <h3>Radio Frequency Reducer</h3>
-                    <p>A device to protect birds in wildlife sanctuaries from mobile device frequencies.</p>
-                    <img src="8.jpeg" alt="Radio Frequency Reducer Image" style="width:100%; height:60%;">
-                </div>
-                <div class="project-card" onclick="openModal('project6')">
-                    <h3>Pratishta</h3>
-                    <p>A chatbot for college inquiries that provides library and campus information.</p>
-                    <img src="capture4.png" alt="Pratishta Image" style="width:90%; height:60%;">
-                </div>
-                <div class="project-card" onclick="openModal('project7')">
-                    <h3>Cypher-Hardware Enabled Root of Trust</h3>
-                    <p>A security system for UIDAI to protect Aadhaar photographs.</p>
-                    <img src="6.png" alt="Root of Trust Image" style="width:100%; height:60%;">
-                </div>
-                <div class="project-card" onclick="openModal('project8')">
-                    <h3>QuantaOne</h3>
-                    <p>A medical rover that records vital information of admitted patients.</p>
-                    <img src="Capture3.png" alt="QuantaOne Image" style="width:100%; height:60%;">
-                </div>
-                <div class="project-card" onclick="openModal('project9')">
-                    <h3>Explore Historical Places of Gulbarga</h3>
-                    <p>A website showcasing historical places in Gulbarga and their significance.</p>
-                    <img src="10.png" alt="Gulbarga Image" style="width:100%; height:60%;">
-                </div>
-                <div class="project-card" onclick="openModal('project10')">
-                    <h3>LegalDocX</h3>
-                    <p>A website that stores documents and allows third-party access based on permission.</p>
-                    <img src="capture5.png" alt="LegalDocX Image" style="width:100%; height:60%;">
-                </div>
-                 <div class="project-card" onclick="openModal('project11')">
-                    <h3>BoardEase-Railway Modernization</h3>
-                    <p>A complete setup to solve multiple railway-oriented problem</p>
-                    <img src="a.png" alt="BoardEase Image" style="width:100%; height:60%;">
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <h3 align="center">These are projects that I am passionately working on</h3>
+    <div class="card-container">
+      <!-- 11 Projects -->
+      <div class="project-card" onclick="openModal('project1')"><h3>StudentCentral</h3></div>
+      <div class="project-card" onclick="openModal('project2')"><h3>DigiLab</h3></div>
+      <div class="project-card" onclick="openModal('project3')"><h3>Radius-Oriented Garbage Collector for Lakes</h3></div>
+      <div class="project-card" onclick="openModal('project4')"><h3>Weight-Sensitive Barrier</h3></div>
+      <div class="project-card" onclick="openModal('project5')"><h3>Radio Frequency Reducer</h3></div>
+      <div class="project-card" onclick="openModal('project6')"><h3>Pratishta</h3></div>
+      <div class="project-card" onclick="openModal('project7')"><h3>Hardware-Enabled Root of Trust</h3></div>
+      <div class="project-card" onclick="openModal('project8')"><h3>QuantaOne</h3></div>
+      <div class="project-card" onclick="openModal('project9')"><h3>Website for Exploring Historical Places</h3></div>
+      <div class="project-card" onclick="openModal('project10')"><h3>LegalDocX</h3></div>
+      <div class="project-card" onclick="openModal('project11')"><h3>BoardEase</h3></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Papers Section -->
-    <section id="papers">
-        <div class="container">
-            <h2 class="section-title">Papers</h2>
-            <h3 align="Center">Some review papers that i have conducted research for </h3>
-            <div class="card-container">
-                <div class="paper-card" onclick="openModal('paper1')">
-                    <h3>Pratishta-A little college helper</h3>
-                </div>
-                <div class="paper-card" onclick="openModal('paper2')">
-                    <h3>BoardEase-The next new Railway Station Design</h3>
-                </div>
-                <div class="paper-card" onclick="openModal('paper3')">
-                    <h3>Cypher-Harware Enabled Root of Trust</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="papers">
+  <div class="container">
+    <h2 class="section-title">Papers</h2>
+    <h3 align="center">Some review papers that I have conducted research for</h3>
+    <div class="card-container">
+      <div class="paper-card" onclick="openModal('paper1')"><h3>Pratishta - A little college helper</h3></div>
+      <div class="paper-card" onclick="openModal('paper2')"><h3>BoardEase - The next new Railway Station Design</h3></div>
+      <div class="paper-card" onclick="openModal('paper3')"><h3>Cypher - Hardware Enabled Root of Trust</h3></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Project Modals -->
-    <div id="project1" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project1')">&times;</span>
-            <h2>StudentCentral</h2>
-            <p>StudentCentral is an application that assists students of all ages by providing advice and instructions on various aspects of education and personal development. The app offers solutions to academic, emotional, and social challenges that students face today.</p>
-        </div>
-    </div>
-    <div id="project2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project2')">&times;</span>
-            <h2>DigiLab</h2>
-            <p>An interactive digital platform designed for 8th–10th grade students to perform safe, step-by-step chemistry experiments online, simulating a real lab environment. </p> </div>
-    </div>
-    <div id="project3" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project3')">&times;</span>
-            <h2>Radius-Oriented Garbage Collector for Lakes</h2>
-            <p>A motorized floating system that moves in a circular pattern to collect surface waste in lakes, improving water cleanliness and supporting aquatic life. </p> </div>
-    </div>
-    <div id="project4" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project4')">&times;</span>
-            <h2>Weight-Sensitive Barrier to Protect Animals</h2>
-            <p>A smart safety system that detects animal weight near cliff edges or restricted zones in wildlife sanctuaries and activates barriers to prevent accidental falls. </p> </div>
-        <div id="project5" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project5')">&times;</span>
-            <h2>Radio Frequency Reducer for Birds</h2>
-            <p>A frequency-regulating device designed to minimize harmful mobile signal exposure in bird-sensitive zones near sanctuaries and forests. </p> </div>
-        </div>
-             <div id="project6" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project11')">&times;</span>
-            <h2>Pratishta – A Little College Helper</h2>
-            <p>Pratishta is a smart virtual assistant designed to simplify student life on campus. It acts as a chatbot that answers college-related queries, offers real-time directions around the campus, helps students find books in the library, and provides important academic updates.  </p> </div>
-             </div>
-    <div id="project7" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project6')">&times;</span>
-            <h2>Hardware-Enabled Root of Trust – Cypher</h2>
-            <p>A secure hardware-based framework that protects Aadhaar photographs and data access through cryptographic verification and tamper-proof design.</p> </div>
-    </div>
-        <div id="project8" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project7')">&times;</span>
-            <h2>QuantaOne</h2>
-            <p>A compact medical rover that captures patient vitals like heart rate, oxygen levels, and temperature — offering real-time data to healthcare professionals. </p> </div>
-        </div>
-            <div id="project9" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project9')">&times;</span>
-            <h2>Explore Historical Places of Gulbarga</h2>
-            <p>A web-based guide that showcases Gulbarga’s rich heritage, providing photos, descriptions, and location details of iconic historical landmarks for tourists and locals.</p> </div>
-            </div>
-                <div id="project10" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project9')">&times;</span>
-            <h2>LegalDocX – Digital Document Vault with Third-Party Access</h2>
-            <p>A secure platform for storing personal documents (like DigiLocker), with an added feature: controlled access for authorized third-party users. </p> </div>
-                </div>
-                    <div id="project11" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('project10')">&times;</span>
-            <h2>BoardEase – Smart Railway Station System</h2>
-            <p>An end-to-end station modernization system using IoT and AI to assist passengers, improve safety, enable real-time updates, and streamline boarding. </p> </div>
-                    </div>
+<!-- Project Modals -->
+<div id="project1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project1')">&times;</span><h2>StudentCentral</h2><p>Student support app offering academic and emotional guidance.</p></div></div>
+<div id="project2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project2')">&times;</span><h2>DigiLab</h2><p>Online chemistry lab for 8th–10th students with safe, gamified experiments.</p></div></div>
+<div id="project3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project3')">&times;</span><h2>Garbage Collector</h2><p>Motorized system to collect floating garbage in lakes using radius sensors.</p></div></div>
+<div id="project4" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project4')">&times;</span><h2>Weight-Sensitive Barrier</h2><p>Sensor-based barrier to prevent animals from falling off cliffs in sanctuaries.</p></div></div>
+<div id="project5" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project5')">&times;</span><h2>Radio Frequency Reducer</h2><p>Device to reduce mobile frequency impact on birds in wildlife zones.</p></div></div>
+<div id="project6" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project6')">&times;</span><h2>Pratishta</h2><p>Chatbot for campus queries, library info, directions and support.</p></div></div>
+<div id="project7" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project7')">&times;</span><h2>Hardware Root of Trust</h2><p>UIDAI security improvement using trusted hardware modules.</p></div></div>
+<div id="project8" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project8')">&times;</span><h2>QuantaOne</h2><p>Medical rover that records patient vitals for doctors and clinics.</p></div></div>
+<div id="project9" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project9')">&times;</span><h2>Historical Places Site</h2><p>A tourism website showcasing Gulbarga’s rich historical sites.</p></div></div>
+<div id="project10" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project10')">&times;</span><h2>LegalDocX</h2><p>Secure document storage and controlled third-party access system.</p></div></div>
+<div id="project11" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('project11')">&times;</span><h2>BoardEase</h2><p>Smart station system with auto-boarding, AI monitoring, and IoT devices.</p></div></div>
 
-    <!-- Paper Modals -->
-    <div id="paper1" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('paper1')">&times;</span>
-            <h2>Pratishta – A Little College Helper</h2>
-            <p>This paper discusses the chatbot-based solution for college students, offering campus directions, library queries, and academic support — all in one friendly assistant.</p>
-        </div>
-    </div>
-        <div id="paper2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('paper2')">&times;</span>
-            <h2>BoardEase – The Next New Railway Station Design</h2>
-            <p>A vision paper exploring smart design elements in railway stations, focusing on digital signage, AI-based safety, and seamless passenger experience.</p>
-        </div>
-    </div>
-        <div id="paper3" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('paper3')">&times;</span>
-            <h2>Cypher – Hardware-Enabled Root of Trust</h2>
-            <p>An in-depth technical paper on implementing hardware-based security layers to ensure secure access to identity systems like UIDAI.</p>
-        </div>
-    </div>
+<!-- Paper Modals -->
+<div id="paper1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('paper1')">&times;</span><h2>Pratishta Paper</h2><p>Explores intelligent chatbot integration in academic environments.</p></div></div>
+<div id="paper2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('paper2')">&times;</span><h2>BoardEase Paper</h2><p>Research on modernizing Indian railways using AI and smart infrastructure.</p></div></div>
+<div id="paper3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('paper3')">&times;</span><h2>Cypher Paper</h2><p>Advanced security architecture using hardware root of trust for UIDAI.</p></div></div>
 
-    <!-- Footer -->
-    <footer>
-<p>Email:awantikainamdar2003@gmail.com</p>
-        <p>&copy; 2024 Awantika P. Inamdar-My Projects & Papers | All Rights Reserved</p>
-    </footer>
+<footer>
+  <p>Email: awantikainamdar2003@gmail.com</p>
+  <p>&copy; 2024 Awantika P. Inamdar - My Projects & Papers | All Rights Reserved</p>
+</footer>
 
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
-        }
+<script>
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+  }
 
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-    </script>
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
